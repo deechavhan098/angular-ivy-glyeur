@@ -9,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
     <h2>{{ name.length }}</h2>
     <h2>{{ name.toUpperCase() }}</h2>
     <h2>{{ greetUser() }}</h2>
+    <Input [id]="myId" type="text" value="Hello" />
+    <Input [disabled]="isDisabled" id="{{ myId }}" value="HII" />
   `,
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
   public name = 'Deepali';
+  public myId = 'testId';
+  public isDisabled = 'true';
 
   greetUser() {
     return 'Hello ' + this.name;
